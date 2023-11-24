@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reprodutor de Vídeo HLS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.css">
+</head>
+
+<body>
+    <div id="dplayer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <video id="video" controls style="width: 500px;"></video>
+    <script>
+        var video = document.getElementById('video');
+        var videoSrc = 'http://localhost:8080/streams/output.m3u8';
+
+        if(Hls.isSupported()){
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+        }
+    </script>
+</body>
+
+</html>
