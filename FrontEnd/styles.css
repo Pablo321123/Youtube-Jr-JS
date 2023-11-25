@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: .9rem;
+    text-transform: uppercase;
+    color: #969595;
+    margin-left: 20px;
+}
+
+i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+p,
+a {
+    font-size: .9rem;
+}
+
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 12px 0;
+}
+
+/* header */
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #0f0f0f;  
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 25px;
+    padding-right: 40px;
+}
+
+.logo-img {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    margin-left: 30px;
+}
+
+img {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+}
+
+#logo-txt {
+    color: white;
+    letter-spacing: -2px;
+    margin-left: -10px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+
+/* search-container*/
+
+.search-container{
+    display: flex;
+    align-items: center;
+    flex: 0 1 685px;
+    margin-left: 40px;
+}
+
+.search-container form{
+    position: relative;
+    width: 100%;
+}
+
+.search-container input{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #0f0f0f;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 12px;
+    color: #fff;
+    font-size: 1rem;    
+}
+
+.search{
+    min-width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    background-color: #313131;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    outline: none;
+    border: none;
+}
+
+.mic{
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313131;
+}
