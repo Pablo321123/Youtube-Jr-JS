@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 * {
     padding: 0;
@@ -19,6 +19,20 @@ h4 {
     margin-left: 20px;
 }
 
+h5 {
+    font-size: .8rem;
+    color: #969595;
+    margin-left: 20px;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+
+}
+
+h5:hover {
+    color: #fff;
+}
+
 i {
     font-size: 1.5rem;
     color: white;
@@ -34,6 +48,31 @@ hr {
     margin: 12px 0;
 }
 
+/*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+    border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+.sidebar:hover::-webkit-scrollbar-thumb {
+    background: #717171;
+
+}
+
+
 /* header */
 
 .header {
@@ -41,7 +80,7 @@ hr {
     left: 0;
     top: 0;
     width: 100%;
-    background-color: #0f0f0f;  
+    background-color: #0f0f0f;
 
     display: flex;
     align-items: center;
@@ -70,35 +109,35 @@ img {
     color: white;
     letter-spacing: -2px;
     margin-left: -10px;
+    font-weight: normal;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
 }
 
-.logo-container{
+.logo-container {
     display: flex;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 10px;
 }
-
 
 /* search-container*/
 
-.search-container{
+.search-container {
     display: flex;
     align-items: center;
     flex: 0 1 685px;
     margin-left: 40px;
 }
 
-.search-container form{
+.search-container form {
     position: relative;
     width: 100%;
 }
 
-.search-container input{
+.search-container input {
     height: 40px;
     display: flex;
     align-items: center;
@@ -109,10 +148,10 @@ img {
     border-bottom-left-radius: 20px;
     padding: 12px;
     color: #fff;
-    font-size: 1rem;    
+    font-size: 1rem;
 }
 
-.search{
+.search {
     min-width: 60px;
     height: 40px;
     display: flex;
@@ -126,7 +165,7 @@ img {
     border: none;
 }
 
-.mic{
+.mic {
     height: 40px;
     min-width: 40px;
     border-radius: 50%;
@@ -138,3 +177,111 @@ img {
     justify-content: center;
     background-color: #313131;
 }
+
+/*profile-container*/
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-container i {
+    margin-left: 25px;
+}
+
+.profile-box {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 25px;
+}
+
+
+/*------------- body container -------------*/
+
+.body-container {
+    display: flex;
+    position: fixed;
+    height: calc(100vh - 60px);
+    top: 60px;
+}
+
+.sidebar {
+    background-color: #0f0f0f;
+    margin-top: 10px;
+    width: 240px;
+    overflow-y: scroll;
+    color: #fff;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.sidebar-items {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    cursor: pointer;
+    height: 40px;
+}
+
+.sidebar-item:hover {
+    background-color: #272727;
+    border-radius: 5px;
+}
+
+.sidebar-item i {
+    margin-right: 20px;
+}
+
+/*Main Content*/
+
+.content {
+    width: calc(100vw - 240px);
+}
+
+.chips-wrapper {
+    overflow-x: scroll;
+    background-color: #0f0f0f;
+    display: flex;
+    padding-left: 14px;
+    /* border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.chips-wrapper::-webkit-scrollbar {
+    height: 0px;
+}
+
+.chip {
+    margin: 12px 6px;
+    background-color: #272727;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    transition: .5s;
+}
+
+.chip:hover {
+    background-color: #3f3f3f;
+}
+
+body{
+    background-color: #0f0f0f;
+}
+
