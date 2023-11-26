@@ -396,9 +396,18 @@ img {
     border-radius: 5px;
 }
 
-.btn i{
+.btn i {
     font-size: 1rem;
     margin-right: 5px;
+    color: #aaa;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.btn:hover i{
+    color: #fff;
 }
 
 .video-content:hover {
