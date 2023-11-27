@@ -97,7 +97,8 @@
                 <div class="chip">Copa do Brasil</div>
                 <div class="chip">Copa do Rei</div>
             </div>
-            <div class="video-container">
+            <div class="video-container" id="vc1">
+
                 <div class="video-content-cover">
                     <div class="video-content">
                         <a href="#" class="video-box">
@@ -126,6 +127,126 @@
             </div>
         </div>
     </div>
+    <script>
+
+        function carregaJson() {
+            fetch('http://localhost:3003/videos')
+                .then(res => res.json()).then(teste => {
+                    console.log('entrei')
+                })
+        }
+
+        function loadVideos() {
+            fetch('videosList.json')
+                .then(res => res.json())
+                .then(videos => {
+
+                    console.log("Entrei");
+                    const videoContainer = document.querySelector("#vc1");
+
+                    videos.map(v => {
+
+                        const video_content_cover = document.createElement("div");
+                        video_content_cover.classList.add("video-content-cover");
+
+                        const video_content = document.createElement("div")
+                        video_content.classList.add("video-content")
+
+                        const video_box = document.createElement("a");
+                        video_box.classList.add("video-box");
+
+                        const thumb = document.createElement("img")
+                        thumb.classList.add("thumb")
+                        thumb.src(v.thumb)
+
+                        const video_details = document.createElement("div")
+                        video_details.classList.add("video-details")
+
+                        const channel_logo = document.createElement("div")
+                        channel_logo.classList.add("channel-logo")
+
+                        const channel_img = document.createElement("img")
+                        channel_img.src(v.channel_img)
+
+                        const detail = document.createElement("div")
+                        detail.classList.add("detail")
+
+                        const title = document.createElement("h3")
+                        title.classList.add("title")
+                        title.textContent = v.title
+
+                        const channel_name = document.createElement("div")
+                        channel_name.classList.add("channel-name")
+                        channel_name.textContent = v.channel_name
+
+                        const views_upload = document.createElement("div")
+                        views_upload.classList.add("views-upload")
+
+                        const views = document.createElement("div")
+                        views.classList.add("views")
+                        views.textContent = v.views
+
+                        const upload = document.createElement("div")
+                        upload.classList.add("upload")
+                        upload.textContent = v.upload
+
+                        const hidden_content = document.createElement("div")
+                        hidden_content.classList.add("hidden-content")
+
+                        const btnViewMore = document.createElement("div")
+                        btnViewMore.classList.add("btn")
+                        btnViewMore.textContent = "Ver mais tarde"
+
+                        const icWatcher = document.createElement("i")
+                        icWatcher.classList.add("ri-time-line")
+
+                        const btnAddToQueue = document.createElement("div")
+                        btnAddToQueue.classList.add("btn")
+                        btnAddToQueue.textContent = "Add to queue"
+
+                        const icAdd = document.createElement("i")
+                        icWatcher.classList.add("ri-play-list-2-line")
+
+                        // video-content-cover childs
+                        video_content_cover.appendChild(video_content)
+
+                        //video-content childs
+                        video_content.appendChild(video_box)
+                        video_content.appendChild(video_details)
+                        video_content.appendChild(hidden_content)
+
+                        //video-box childs
+                        video_box.appendChild(thumb);
+
+                        //video-details childs
+                        video_details.appendChild(channel_logo);
+                        video_details.appendChild(detail)
+
+                        // channel-logo childs
+                        channel_logo.appendChild(channel_img)
+
+                        // detail childs
+                        detail.appendChild(title)
+                        detail.appendChild(channel_name)
+                        detail.appendChild(views_upload)
+
+                        // views_upload childs
+                        views_upload.appendChild("views")
+                        views_upload.appendChild("upload")
+
+                        //hidden_content childs
+                        hidden_content.appendChild(btnViewMore)
+                        hidden_content.appendChild(btnAddToQueue)
+
+                        //btns childs
+                        btnViewMore.appendChild(icWatcher)
+                        btnAddToQueue.appendChild(icAdd)
+                    })
+                })
+        }
+
+        carregaJson()
+    </script>
 </body>
 
 </html>
