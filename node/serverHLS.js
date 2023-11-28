@@ -1,7 +1,6 @@
 const express = require('express')
 const HLSServer = require('hls-server');
 const http = require('http')
-const fs = require('fs');
 const path = require('path');
 
 const assetsPath = path.join(__dirname, '../assets/output') //Caminho para os arquivos m3u8 (padrao HLS)
