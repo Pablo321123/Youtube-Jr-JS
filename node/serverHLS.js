@@ -9,7 +9,8 @@ const htmlPath = path.join(__dirname, '../html') //Caminho para a página html q
 const homePath = path.join(__dirname, '../FrontEnd/index.html') //Caminho para a página html que consome o nosso servidor HLS
 const cssPath = path.join(__dirname, '../FrontEnd')
 
-const port = 8080
+const portServerHls = 8080
+const portRoutes = 3003
 const app = express();
 
 
@@ -17,7 +18,7 @@ app.use(express.static(htmlPath))
 app.use(express.static(assetsPath))
 app.use(express.static(cssPath));
 
-//Remova ou comente essas linhas se estiverem presentes
+//Permissões para permitir a comunicação entre portas
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -40,8 +41,8 @@ const hls = new HLSServer(server, {
   dir: assetsPath // Diretório onde os arquivos HLS estão localizados
 })
 
-server.listen(port, () => { console.log(`Servidor HLS rodando em http://localhost:${port}`) })
-app.listen(3003, () => { console.log(`Rotas de consulta rodando em http://localhost:${3003}/home`) })
+server.listen(portServerHls, () => { console.log(`Servidor HLS rodando em http://localhost:${portServerHls}`) })
+app.listen(portRoutes, () => { console.log(`Rotas de consulta rodando em http://localhost:${portRoutes}/home`) })
 
 
 

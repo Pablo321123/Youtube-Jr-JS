@@ -342,6 +342,7 @@ img {
 .title {
     font-size: .9rem;
     padding-top: 10px;
+    min-height: 50px;
 }
 
 .video-details {
@@ -417,6 +418,7 @@ img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     background-color: #0f0f0f;
     border-radius: 0px;
+    cursor: pointer;
 }
 
 
@@ -491,6 +493,11 @@ img {
 
     .video-box {
         height: 250px;
+    }
+
+
+    .video-content:hover{
+        position: relative;
     }
 
     .search-container,

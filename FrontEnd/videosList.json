@@ -2,10 +2,19 @@
     {
         "title": "RECRIEI o App que SUBSTITUI o SoundPad e o VoiceMod!",
         "channel_name": "P4 Code",
-        "views": "28 mi views",
+        "views": "28 mil views",
         "upload": "1 dia atrás",
         "thumb": "img/thumb1.png",
-        "channel_img": "img/3.png",
-        "video_route": ""
+        "channel_img": "img/p4.png",
+        "video_route": "https://www.youtube.com/watch?v=t0j6zIKwM_w&t=476s"
+    },
+    {
+        "title": "CR7, O 'Milior'",
+        "channel_name": "P4 Code",
+        "views": "1 mi views",
+        "upload": "3 dia atrás",
+        "thumb": "img/thumbCr7.png",
+        "channel_img": "img/p4.png",
+        "video_route": "http://localhost:8080?video=output.m3u8"
     }
 ]

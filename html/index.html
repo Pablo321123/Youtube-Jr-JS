@@ -14,23 +14,28 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
     <video id="video" controls style="width: 500px;"></video>
     <script>
-        var video = document.getElementById('video');
-        var videoSrc = 'http://localhost:8080/streams/output.m3u8';
 
-        if(Hls.isSupported()){
-            var hls = new Hls();
-            hls.loadSource(videoSrc);
-            hls.attachMedia(video);
+        function getParametersUrl(parameter) {
+            const queryString = window.location.search; // obtém a string de consulta da URL
+            const urlParams = new URLSearchParams(queryString); // Cria um objeto a partir da string de consulta
+            const param = urlParams.get(parameter) //Obtem o valor do nosso parametro 
+
+            return param
         }
 
-        function carregaJson() {
-            fetch('http://localhost:3003/videos')
-                .then(res => res.json()).then(teste => {
-                    console.log('entrei')
-                })
+        function loadMediaPlayer() {
+
+            var video = document.getElementById('video');
+            var videoSrc = `http://localhost:8080/streams/${getParametersUrl('video')}`;
+
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(videoSrc);
+                hls.attachMedia(video);
+            }
         }
 
-        carregaJson()
+        loadMediaPlayer()
     </script>
 </body>
 
