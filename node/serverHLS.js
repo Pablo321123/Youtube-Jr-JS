@@ -5,13 +5,12 @@ const path = require('path');
 const fs = require('fs').promises;
 const cors = require('cors');
 
-
-
 const assetsPath = path.join(__dirname, '../assets/output') //Caminho para os arquivos m3u8 (padrao HLS)
 const htmlPath = path.join(__dirname, '../html') //Caminho para a página html que consome o nosso servidor HLS
 const homePath = path.join(__dirname, '../FrontEnd/index.html') //Caminho para a página html que consome o nosso servidor HLS
 const cssHomePath = path.join(__dirname, '../FrontEnd')
 const cssMediaPlayerPath = path.join(__dirname, '../html/mediaPlayerStyle.css')
+const favIconPath = path.join(__dirname, '../FrontEnd/img/yt_ico_32x32.png')
 //const playerPath = path.join(__dirname, '../html/index.html')
 
 const portServerHls = 8080
@@ -54,17 +53,19 @@ app.get('/styles/mediaPlayerStyle', (req, res, next) => {
   res.sendFile(cssMediaPlayerPath)
 })
 
-const server = http.createServer(app)
-//http.ClientRequest('Access-Control-Allow-Origin', '*')
+app.get('/styles/favicon', (req, res, next) => {
+  res.sendFile(favIconPath)
+})
 
-const hls = new HLSServer(server, {
-  path: '/streams',
-  dir: assetsPath,
-  
+const server = http.createServer(app) //Abrir o servidor HTTP
+
+const hls = new HLSServer(server, { // Configurar o servidor HLS no servidor HTTP
+  path: '/streams', //Defini as rotas para acessar os videos
+  dir: assetsPath, //Pasta na qual está armazenada os arquivos .m3u8
 })
 
 
-server.listen(portServerHls, () => {
+server.listen(portServerHls, () => { //Servidor aberto e ouvindo as portas para requisições
   console.log(`Servidor HLS rodando em http://localhost:${portServerHls}`)
 })
 

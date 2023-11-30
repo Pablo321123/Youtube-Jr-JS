@@ -7,16 +7,17 @@
     <title>Reprodutor de Vídeo HLS</title>
     <link rel="stylesheet" href="http://localhost:3003/styles/mediaPlayerStyle">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.css">
+    <link rel="shortcut icon" href="http://localhost:3003/styles/favicon" type="image/x-icon">
 </head>
 
 <body>
 
     <div class="container">
         <div class="main-video">
-            <div class="dplayer">
+            <div class="dplayer" id="dplayer">
                 <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
                 <video id="mediaPlayer" controls></video>
-                <h3 class="title">CR7 - O milior</h3>
+                <h3 class="title">CR7, O 'Milior'</h3>
             </div>
         </div>
 
@@ -82,11 +83,11 @@
                     listVideo.forEach(vid => vid.classList.remove('active'));
                     video.classList.add('active');
 
-                    if(video.classList.contains('active')){
+                    if (video.classList.contains('active')) {
                         let src = video.children[0].getAttribute('src')
                         mainVideo.src = src
 
-                        let text = video.children.innerHTML
+                        let text = video.children[1].innerHTML
                         mainTitle.innerHTML = text
                     }
                 }
